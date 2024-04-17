@@ -1,0 +1,42 @@
+{
+    "categories": [
+        {
+            "id": "c1",
+            "name": "Chats",
+            "forums": ["f1"]
+        }
+    ],
+    "forums": [
+        {
+            "id": "f1",
+            "name": "Vue Forum",
+            "description": "This is a Vue Forum",
+            "categoryId": "c1",
+            "threads": ["t1"]
+        }
+    ],
+    "users": [
+        {
+            "id": "u1",
+            "name": "Jahin"
+        }
+    ],
+    "threads": [
+        {
+            "id": "t1",
+            "title": "What is your favorite food?",
+            "publishedAt": 1681681861,
+            "posts": ["p1"],
+            "userId": "u1"
+        }
+    ],
+    "posts": [
+        {
+            "id": "p1",
+            "publishedAt": 1681681861,
+            "userId": "u1",
+            "text": "I like burgers, and you?",
+            "threadId": "t1"
+        }
+    ]
+}
