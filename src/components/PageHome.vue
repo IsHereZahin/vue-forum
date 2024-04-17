@@ -10,7 +10,7 @@
         <!-- <p>{{ users.find(u => u.id === posts.find(p => p.id === postId).userId).name }}</p>
         <p>{{ posts.find(p => p.id === postId).text }}</p> -->
 
-        <!-- If not using the methods, use it -->
+        <!-- If not using the functions, use it -->
         <p>{{ getUserByPostId(postId).name }}</p>
         <p>{{ getPostTextById(postId).text }}</p>
 
@@ -19,30 +19,29 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import sourceData from '../data.json';
+// import { reactive } from 'vue';
+// const threads = reactive(sourceData.threads)
+// const posts   = reactive(sourceData.posts)
+// const users   = reactive(sourceData.users)
 
-export default {
-  // Component options here
-  data() {
-    return {
-      threads: sourceData.threads,
-      posts: sourceData.posts,
-      users: sourceData.users,
-    };
-  },
+import { ref } from 'vue';
 
-  methods: {
-    getUserByPostId(postId) {
-      const userId = this.posts.find(post => post.id === postId).userId;
-      return this.users.find(user => user.id === userId);
-    },
-    getPostTextById(postId) {
-      return this.posts.find(post => post.id === postId);
-    }
-  }
+const threads = ref(sourceData.threads)
+const posts   = ref(sourceData.posts)
+const users   = ref(sourceData.users)
 
-};
+function getUserByPostId(postId)
+{
+  const userId = this.posts.find(post => post.id === postId).userId;
+  return users.value.find(user => user.id === userId);
+}
+function getPostTextById(postId)
+{
+  return posts.value.find(post => post.id === postId);
+}
+
 </script>
 
 <style scoped>
