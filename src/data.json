@@ -19,6 +19,10 @@
         {
             "id": "u1",
             "name": "Jahin"
+        },
+        {
+            "id": "u2",
+            "name": "Taskin"
         }
     ],
     "threads": [
@@ -34,7 +38,7 @@
         {
             "id": "p1",
             "publishedAt": 1681681861,
-            "userId": "u1",
+            "userId": "u2",
             "text": "I like burgers, and you?",
             "threadId": "t1"
         }
